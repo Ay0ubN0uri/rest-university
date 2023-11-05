@@ -6,7 +6,13 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.servers.Server;
+
 @SpringBootApplication
+@OpenAPIDefinition(servers = {
+		@Server(url = "https://quack-act-production.up.railway.app", description = "Default Server URL")
+})
 @EntityScan(basePackages = { "com.a00n.entities" })
 @ComponentScan(basePackages = {
 		"com.a00n.controllers",
